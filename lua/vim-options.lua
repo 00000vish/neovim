@@ -1,5 +1,8 @@
 vim.g.mapleader = " "
 
+vim.g.netrw_banner = 0
+vim.g.loaded_netrwPlugin =  1
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
@@ -50,3 +53,6 @@ vim.api.nvim_set_keymap('n', '<A-o>', 'o<Esc>', {noremap = true, silent = true})
 
 vim.api.nvim_set_keymap('i', '<A-O>', '<Esc>O<Esc>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-O>', 'O<Esc>', {noremap = true, silent = true})
+
+
+

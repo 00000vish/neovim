@@ -1,8 +1,7 @@
 return {
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
-  config = function()
-vim.api.nvim_create_autocmd('TabNewEntered', { command = 'Dashboard' })
+  opts = function()
      local logo = [[
  ██▒   █▓ ▒█████   ██▓▓█████▄     ██▒   █▓ ██▓ ███▄ ▄███▓
 ▓██░   █▒▒██▒  ██▒▓██▒▒██▀ ██▌   ▓██░   █▒▓██▒▓██▒▀█▀ ██▒
@@ -15,15 +14,20 @@ vim.api.nvim_create_autocmd('TabNewEntered', { command = 'Dashboard' })
       ░      ░ ░   ░     ░             ░   ░         ░   
      ░                 ░              ░                  
     ]]
-    require('dashboard').setup {
-      config = {
-        header = vim.split(logo, "\n"),
-        center = {}
-      },
-      footer = function ()
-        return {}
-      end
-    }
-  end,
+     local opts = {
+          theme = 'hyper',
+          config = {
+          header = vim.split(logo, "\n"),
+            week_header = {
+             enable = false,
+            },
+            shortcut = {
+                { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
+             },
+            footer = {}
+          },
+     }
+     return opts
+   end,
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
 }

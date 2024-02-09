@@ -3,6 +3,19 @@ vim.g.mapleader = " "
 vim.g.netrw_banner = 0
 vim.g.loaded_netrwPlugin =  1
 
+-- Enable list mode
+-- vim.opt.list = true
+
+-- Set tab character to be displayed as '>'
+-- vim.opt.listchars:append("tab:>")
+
+-- Set space character to be displayed as '.'
+-- vim.opt.listchars:append("space:.")
+
+-- Set extended listchars to show trailing spaces
+-- vim.opt.listchars:append("trail:·")
+
+
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")

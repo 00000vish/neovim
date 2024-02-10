@@ -8,13 +8,12 @@ vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 
--- Navigate vim panes better
 vim.api.nvim_set_keymap('n', '<C-n>', ':Neotree filesystem toggle left<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bf', ':Neotree buffers toggle float<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-k>', ':wincmd k<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-j>', ':wincmd j<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-h>', ':wincmd h<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<c-l>', ':wincmd l<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>h', ':nohlsearch<CR>', { noremap = true, silent = true })
 
@@ -76,3 +75,9 @@ vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, sile
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { noremap = true, silent = true })
+vim.keymap.set('n', '<C-/>', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>s', '<cmd>lua require("spectre").toggle()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', { noremap = true, silent = true })

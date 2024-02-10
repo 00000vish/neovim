@@ -75,9 +75,16 @@ vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, sile
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { noremap = true, silent = true })
-vim.keymap.set('n', '<C-/>', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', { noremap = true, silent = true })
-vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", { noremap = true, silent = true })
+vim.keymap.set('n', '<C-/>', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
+  { noremap = true, silent = true })
+vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+  { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>s', '<cmd>lua require("spectre").toggle()<CR>', { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', { noremap = true, silent = true })
-vim.keymap.set('v', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+  { noremap = true, silent = true })
+vim.keymap.set('v', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+  { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-W>', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-DEL>', '<Esc>lbce', {noremap = true})

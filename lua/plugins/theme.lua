@@ -1,14 +1,14 @@
 return {
---  {
---    "catppuccin/nvim",
---    lazy = false,
---    name = "catppuccin",
---    priority = 999,
---    config = function()
---      vim.cmd.colorscheme "catppuccin"
---    end
---  },
-  { "ellisonleao/gruvbox.nvim",
+ --{
+ --  "catppuccin/nvim",
+ --  lazy = false,
+ --  name = "catppuccin",
+ --  priority = 999,
+ --  config = function()
+ --    vim.cmd.colorscheme "catppuccin"
+ --  end
+ --},
+   { "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = function()
     require("gruvbox").setup({
@@ -27,5 +27,11 @@ return {
     })
       vim.cmd("colorscheme gruvbox")
     end
-  } 
+  }
+ -- {
+ -- "folke/tokyonight.nvim",
+ -- lazy = false,
+ -- priority = 1000,
+ -- opts = {},
+ -- }
 }

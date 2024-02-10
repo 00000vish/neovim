@@ -74,3 +74,10 @@ vim.api.nvim_set_keymap("i", "<C-k>", "<Up>",{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Tab>', '<Cmd>BufferNext<CR>',{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<S-Tab>', '<Cmd>BufferPrevious<CR>',{noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>',{noremap = true, silent = true})
+
+vim.api.nvim_set_keymap("n", "<leader>gnh", ":Gitsigns next_hunk<CR>",{noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gph", ":Gitsigns prev_hunk<CR>",{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>grh', ':Gitsigns reset_hunk<CR>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gsh", ":Gitsigns preview_hunk_inline<CR>",{noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>gdf", ":Gitsigns diffthis<CR>",{noremap = true, silent = true})
+

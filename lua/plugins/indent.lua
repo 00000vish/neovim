@@ -2,8 +2,8 @@ return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
   opts = {
-    exclude= {
-      filetypes ={
+    exclude = {
+      filetypes = {
         "help",
         "startify",
         "dashboard",

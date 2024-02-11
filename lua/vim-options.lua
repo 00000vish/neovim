@@ -64,6 +64,7 @@ vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>BufferClose<CR>', { noremap = tr
 vim.api.nvim_set_keymap("n", "<leader>gnh", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gph", ":Gitsigns prev_hunk<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>grh', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<leader>grh', ':Gitsigns reset_hunk<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gsh", ":Gitsigns preview_hunk_inline<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>gdf", ":Gitsigns diffthis<CR>", { noremap = true, silent = true })
 
@@ -75,6 +76,7 @@ vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, sile
 vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format, { noremap = true, silent = true })
+
 vim.keymap.set('n', '<C-/>', '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>',
   { noremap = true, silent = true })
 vim.keymap.set('v', '<C-/>', "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
@@ -86,5 +88,9 @@ vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({sele
 vim.keymap.set('v', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
   { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap('i', '<C-BS>', '<C-W>', {noremap = true})
-vim.api.nvim_set_keymap('i', '<C-DEL>', '<Esc>lbce', {noremap = true})
+vim.api.nvim_set_keymap('i', '<C-BS>', '<C-W>', { noremap = true })
+vim.api.nvim_set_keymap('i', '<C-DEL>', '<Esc>lbce', { noremap = true })
+
+vim.keymap.set("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fw", '<cmd>lua require("telescope.builtin").live_grep()<CR>', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>fb", '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<CR>', { noremap = true, silent = true })

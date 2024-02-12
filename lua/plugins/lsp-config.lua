@@ -11,7 +11,14 @@ return {
     lazy = false,
     config = function()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "rust_analyzer" },
+        ensure_installed = {
+          "lua_ls",
+          "rust_analyzer",
+          "html",
+          "tsserver",
+          "jsonls",
+          "cssls"
+        },
       }
     end
   },
@@ -25,7 +32,14 @@ return {
       local on_attach = configs.on_attach
       local capabilities = configs.capabilities
 
-      local servers = { "lua_ls", "rust_analyzer" }
+      local servers = {
+        "lua_ls",
+        "rust_analyzer",
+        "html",
+        "tsserver",
+        "jsonls",
+        "cssls"
+      }
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {
